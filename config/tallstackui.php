@@ -313,7 +313,7 @@ return [
         */
         'toast' => [
             'z-index' => 'z-[100]',
-            'progress' => true,
+            'progress' => false,
             'expandable' => false,
             'position' => 'bottom-right',
             'timeout' => 3,

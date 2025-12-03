@@ -8,13 +8,15 @@
                 <a wire:navigate href="{{ route('wooblr.index') }}"
                     class="flex items-center gap-3 px-2 py-2 rounded-xl transition-colors hover:bg-zinc-50">
                     <div class="size-10 rounded-lg p-1 overflow-hidden shadow-sm border border-zinc-100">
-                        <img class="size-full object-cover" src="{{ asset('images/logo.png') }}"
+                        <img class="size-full object-cover"
+                            src="{{ $globalSettings && $globalSettings->site_logo ? Storage::url($globalSettings->site_logo) : asset('images/logo.png') }}"
                             onerror="this.style.display='none'" />
                         <div class="size-full bg-orange-600 flex items-center justify-center text-white font-bold text-xs"
                             style="display: none" onerror="this.style.display='flex'">AI</div>
                     </div>
                     <div class="flex-1 overflow-hidden ">
-                        <h1 class="text-base font-bold text-zinc-900 leading-none pt-[4px]">{{ config('app.name') }}
+                        <h1 class="text-base font-bold text-zinc-900 leading-none pt-[4px]">
+                            {{ $globalSettings->site_name ?? config('app.name') }}
                         </h1>
                         <span class="text-[10px] text-zinc-400 font-medium tracking-wide uppercase">Business
                             Suite</span>
@@ -68,13 +70,14 @@
                                 </a>
                             </li>
                             <li>
-                                <a wire:navigate href="#" @class([
+                                <a wire:navigate href="{{ route('wooblr.setting') }}" @class([
                                     'flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
-                                    'bg-orange-50 text-orange-700' => false,
-                                    'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900' => true,
+                                    'bg-orange-50 text-orange-700' => request()->routeIs('wooblr.setting'),
+                                    'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900' => !request()->routeIs(
+                                        'wooblr.setting'),
                                 ])>
                                     <i class="hgi hgi-stroke hgi-settings-02 text-lg"></i>
-                                    <span>Pengaturan</span>
+                                    <span>Pengaturan Umum</span>
                                 </a>
                             </li>
                         </ul>

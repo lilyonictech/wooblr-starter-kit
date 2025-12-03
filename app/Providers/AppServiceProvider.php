@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use TallStackUi\Facades\TallStackUi;
+use Illuminate\Support\Facades\View;
+use App\Models\GeneralSetting;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,6 +14,12 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Share variable $globalSettings ke SEMUA view
+        if (Schema::hasTable('general_settings')) {
+            $settings = GeneralSetting::first();
+            View::share('globalSettings', $settings);
+        }
+
         TallStackUi::personalize()
             ->form('input')
             ->block('input.wrapper')

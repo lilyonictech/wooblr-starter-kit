@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\GeneralSetting;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -10,6 +11,13 @@ class WooblrUserSeeder extends Seeder
 {
     public function run(): void
     {
+
+        GeneralSetting::query()
+            ->create([
+                'site_name' => 'My Wooblr',
+                'site_description' => 'Starter Kit Admin Panel'
+            ]);
+
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
         $permissions = [
             'user.create',
