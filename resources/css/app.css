@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "../../vendor/tallstackui/tallstackui/css/v4.css";
+@plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/forms';
+
+@source '../../vendor/tallstackui/tallstackui/**/*.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: "Inter", sans-serif, ui-sans-serif, system-ui,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+
+    --color-primary-50: #e2e2e2;
+    --color-primary-100: #c6c6c6;
+    --color-primary-200: #919191;
+    --color-primary-300: #5e5e5e;
+    --color-primary-400: #303030;
+    --color-primary-500: #000000;
+    --color-primary-600: #000000;
+    --color-primary-700: #000000;
+    --color-primary-800: #000000;
+    --color-primary-900: #000000;
+    --color-primary-950: #000000;
+}
