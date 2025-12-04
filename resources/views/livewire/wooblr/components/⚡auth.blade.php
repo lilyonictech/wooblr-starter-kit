@@ -1,7 +1,7 @@
 <div class="flex items-center justify-center p-6 min-h-screen bg-white">
     <div class="mx-auto w-full max-w-sm space-y-6">
         <div class="text-center space-y-2">
-            <h1 class="font-bold text-xl">Selamat datang di {{ config('app.name') }}.</h1>
+            <h1 class="font-bold text-xl">Selamat datang di {{ $globalSettings->site_name ?? config('app.name') }}.</h1>
             <p class="text-sm text-zinc-600 font-light">silahkan masuk ke akun administrator kamu
             </p>
         </div>

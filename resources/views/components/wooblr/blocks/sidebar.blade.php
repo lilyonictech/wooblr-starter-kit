@@ -140,7 +140,7 @@
                                 </p>
                             </div>
 
-                            <a wire:navigate href="#"
+                            <a wire:navigate href="{{ route('wooblr.profile') }}"
                                 class="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-50 rounded-lg transition-colors group">
                                 <i
                                     class="hgi hgi-stroke hgi-user-circle text-base leading-0 group-hover:-translate-x-0.5 transition-transform"></i>

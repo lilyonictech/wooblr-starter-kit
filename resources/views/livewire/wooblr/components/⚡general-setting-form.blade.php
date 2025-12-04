@@ -79,12 +79,12 @@
                                         accept="image/*">
                                 </label>
 
-                                @if ($existing_logo && !$site_logo)
+                                {{-- @if ($existing_logo && !$site_logo)
                                     <button type="button" wire:confirm="Hapus logo saat ini?" wire:click="removeLogo"
                                         class="text-red-500 hover:text-red-700 text-sm font-medium px-2">
                                         Hapus
                                     </button>
-                                @endif
+                                @endif --}}
                             </div>
                             @error('site_logo')
                                 <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span>
